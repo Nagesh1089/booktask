@@ -1,0 +1,7 @@
+@media (max-width: 576px) {
+  .button-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
