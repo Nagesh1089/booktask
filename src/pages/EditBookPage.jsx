@@ -196,6 +196,8 @@ const EditBookPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(formData)
     try {
       await axios.put(
         `https://jsonplaceholder.typicode.com/posts/${id}`,
@@ -210,9 +212,9 @@ const EditBookPage = () => {
         draggable: true,
         progress: undefined, // React Toastify automatically manages the progress bar
       });
-      setTimeout(() => {
-        navigate("/"); // Redirect to home after updating
-      }, 5000); // Wait until toast disappears before navigating
+      // setTimeout(() => {
+      //   navigate("/"); // Redirect to home after updating
+      // }, 5000); // Wait until toast disappears before navigating
     } catch (error) {
       console.error("Error updating book:", error);
       toast.error("There was an error updating the book.", {
