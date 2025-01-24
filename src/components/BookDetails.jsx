@@ -48,6 +48,7 @@ const BookDetails = () => {
           <Card>
             <Card.Body>
               <Card.Title>Book Title: {book.title}</Card.Title>
+
               <Card.Text>Author: {book.body}</Card.Text>
               <Button variant="primary" onClick={() => window.history.back()}>
                 Go Back

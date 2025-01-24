@@ -43,7 +43,7 @@ const HomePage = () => {
     }
   };
 
-  // Handle book deletion
+  
   const handleDelete = async (id) => {
     try {
       await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
@@ -108,7 +108,7 @@ const HomePage = () => {
     fetchBooks();
   }, []);
 
-  // Pagination logic
+  // Pagination
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
   const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
@@ -136,20 +136,20 @@ const HomePage = () => {
     </div>
   ) : (
     <>
-      <Row className="justify-content-between">
-        <Col md={8}>
-          <h1 className="text-center mb-4">Book Inventory</h1>
-        </Col>
-        <Col md={4} className="text-right">
-          <Button
-            variant="success"
-            onClick={() => handleShowModal("add")}
-            className="mb-3"
-          >
-            Add Book
-          </Button>
-        </Col>
-      </Row>
+   <Row className="align-items-center">
+  <Col md={8}>
+    <h1 className="text-center mb-4">Book Inventory Management System</h1>
+  </Col>
+  <Col md={4} className="d-flex justify-content-end">
+    <Button
+      variant="success"
+      onClick={() => handleShowModal("add")}
+      className="mb-3"
+    >
+      Add Book
+    </Button>
+  </Col>
+</Row>
 
       <Table striped bordered hover responsive>
         <thead>
@@ -161,7 +161,7 @@ const HomePage = () => {
           </tr>
         </thead>
         <tbody>
-          {currentBooks.map((book) => (
+          {currentBooks.map((book,i) => (
             <tr key={book.id}>
               <td>{book.id}</td>
               <td
